@@ -15,10 +15,35 @@
   <div>
     <h1>Departments of the University</h1>
   </div>
-  <div class="container-fluid">
+  <!-- <div class="container-fluid">
   <ul>
   <li th:each="departments : ${departmentList}" th:text="${departments.getName()}"></li>
-  </ul>
+  <li th:each="departments : ${departmentList}" th:text="${departments.getAddress()}"></li>
+  </ul> -->
+  <div class="container-fluid">
+  <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">Phone</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr th:each="departments : ${departmentList}" scope="row">
+      <td th:text="${departments.getName()}"></td>
+ 
+    
+    <td  th:text="${departments.getAddress()}"></td> 
+    
+    
+    <td th:text="${departments.getPhone()}"></td>
+    </tr>
+  </tr>
+  </tbody>
+  </table>
+  </div>
+  
   <!-- <ul>
 		<li th:each="departmentList : ${departmentList}" th:text="${departmentList}"></li>
   </ul> -->
