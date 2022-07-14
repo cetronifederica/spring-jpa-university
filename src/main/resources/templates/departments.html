@@ -17,8 +17,11 @@
   </div>
   <div class="container-fluid">
   <ul>
-		<li th:each="departmentList : ${departmentList}" th:text="${departmentList}"></li>
+  <li th:each="departments : ${departmentList}" th:text="${departments.getName()}"></li>
   </ul>
+  <!-- <ul>
+		<li th:each="departmentList : ${departmentList}" th:text="${departmentList}"></li>
+  </ul> -->
   </div>
   
 
