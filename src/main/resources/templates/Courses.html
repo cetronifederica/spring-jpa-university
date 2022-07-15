@@ -3,47 +3,40 @@
   <head>
     <th:block th:replace="fragments :: risorse-head"></th:block>
     <link rel="stylesheet" th:href="@{/department.css}">
-    <title>Departments</title>
+    <title>Courses</title>
   </head>
   <body>
-  <nav th:replace="fragments :: navbar('departments')"></nav>
+  <nav th:replace="fragments :: navbar('courses')"></nav>
   <div>
-    <h1>Departments of the University</h1>
+    <h1>Courses</h1>
   </div>
   <div class="container-fluid">
   <table class="table table-bordered table-light">
   <thead>
     <tr class="table-info">
       <th scope="col">Name</th>
-      <th scope="col">Address</th>
-      <th scope="col">Phone</th>
-      <th scope="col">Email</th>
+      <th scope="col">Description</th>
+      <th scope="col">Period</th>
+      <th scope="col">Year</th>
+      <th scope="col">CFU</th>
       <th scope="col">Website</th>
-      <th scope="col">Head of Department</th>
     </tr>
   </thead>
   <tbody>
-  <tr th:each="departments : ${departmentList}" scope="row">
-      <td th:text="${departments.getName()}"></td>
- 
-    
-    <td  th:text="${departments.getAddress()}"></td> 
-    
-    
-    <td th:text="${departments.getPhone()}"></td>
-    <td th:text="${departments.getEmail()}"></td>
-    <td th:text="${departments.getWebsite()}"></td>
-    <td th:text="${departments.getHeadOfDepartment()}"></td>
+  <tr th:each="courses : ${coursesList}" scope="row">
+    <td th:text="${courses.getName()}"></td>
+    <td  th:text="${courses.getDescription()}"></td> 
+    <td th:text="${courses.getPeriod()}"></td>
+    <td th:text="${courses.getYear()}"></td>
+    <td th:text="${courses.getCfu()}"></td>
+    <td th:text="${courses.getWebsite()}"></td>
+   
     </tr>
   </tr>
   </tbody>
   </table>
   </div>
-  
-  <!-- <ul>
-		<li th:each="departmentList : ${departmentList}" th:text="${departmentList}"></li>
-  </ul> -->
-  </div>
+  <!-- <div class="container-fluid">
   
 
     <!-- Optional JavaScript; choose one of the two! -->
