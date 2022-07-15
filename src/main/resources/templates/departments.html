@@ -10,7 +10,10 @@
   <div>
     <h1>Departments of the University</h1>
   </div>
-  <div class="container-fluid">
+  <div th:if="${#lists.isEmpty(departmentList)}">
+  <h1> Non ci sono Dipartimenti</h1>
+  </div>
+  <div th:unless="${#lists.isEmpty(departmentList)}" class="container-fluid">
   <table class="table table-bordered table-light">
   <thead>
     <tr class="table-info">

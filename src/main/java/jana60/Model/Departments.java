@@ -36,7 +36,9 @@ public class Departments {
 	}
 
 	public String getName() {
+
 		return name;
+
 	}
 
 	public void setName(String name) {
@@ -44,7 +46,9 @@ public class Departments {
 	}
 
 	public String getAddress() {
+
 		return address;
+
 	}
 
 	public void setAddress(String address) {
@@ -53,6 +57,7 @@ public class Departments {
 
 	public String getPhone() {
 		return phone;
+
 	}
 
 	public void setPhone(String phone) {
@@ -60,7 +65,9 @@ public class Departments {
 	}
 
 	public String getEmail() {
+
 		return email;
+
 	}
 
 	public void setEmail(String email) {
@@ -69,6 +76,7 @@ public class Departments {
 
 	public String getWebsite() {
 		return website;
+
 	}
 
 	public void setWebsite(String website) {
@@ -76,7 +84,9 @@ public class Departments {
 	}
 
 	public String getHeadOfDepartment() {
+
 		return headOfDepartment;
+
 	}
 
 	public void setHeadOfDepartment(String headOfDepartment) {

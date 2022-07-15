@@ -10,7 +10,10 @@
   <div>
     <h1>Courses</h1>
   </div>
-  <div class="container-fluid">
+  <div th:if="${#lists.isEmpty(coursesList)}">
+  <h1> Non ci sono corsi</h1>
+  </div>
+  <div th:unless="${#lists.isEmpty(coursesList)}" class="container-fluid">
   <table class="table table-bordered table-light">
   <thead>
     <tr class="table-info">
