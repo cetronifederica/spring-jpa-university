@@ -18,6 +18,7 @@
   <thead>
     <tr class="table-info">
       <th scope="col">Name</th>
+      <th scope="col">Departments</th>
       <th scope="col">Level</th>
       <th scope="col">Address</th>
       <th scope="col">Email</th>
@@ -27,6 +28,7 @@
   <tbody>
   <tr th:each="degrees : ${degreesList}" scope="row">
     <td th:text="${degrees.getName()}"></td>
+    <td th:text="${degrees.departments.name}"></td>
     <td  th:text="${degrees.getLevel()}"></td> 
     <td th:text="${degrees.getAddress()}"></td>
     <td th:text="${degrees.getEmail()}"></td>

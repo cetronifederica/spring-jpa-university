@@ -10,7 +10,7 @@ import jana60.Repository.DepartmentsRepository;
 
 @Controller
 @RequestMapping("/departments")
-public class UniversityController {
+public class DepartmentsController {
 
 	@Autowired
 	private DepartmentsRepository repo;
