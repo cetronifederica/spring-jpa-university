@@ -10,7 +10,8 @@
   <div>
     <h1>Departments of the University</h1>
   </div>
-  <div th:if="${#lists.isEmpty(departmentList)}">
+  <!-- da mostrare se la lista è vuota -->
+  <div th:if="${#lists.isEmpty(departmentList)}"> <!-- oppure th:if="${departmentList.size() >0 }" -->
   <h1> Non ci sono Dipartimenti</h1>
   </div>
   <div th:unless="${#lists.isEmpty(departmentList)}" class="container-fluid">
