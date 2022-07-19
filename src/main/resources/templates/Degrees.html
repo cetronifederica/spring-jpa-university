@@ -28,7 +28,7 @@
   <tbody>
   <tr th:each="degrees : ${degreesList}" scope="row">
     <td th:text="${degrees.getName()}"></td>
-    <td th:text="${degrees.departments.name}"></td>
+    <td th:text="${degrees.getDepartments().getName()}"></td>
     <td  th:text="${degrees.getLevel()}"></td> 
     <td th:text="${degrees.getAddress()}"></td>
     <td th:text="${degrees.getEmail()}"></td>

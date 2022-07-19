@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <th:block th:replace="fragments :: risorse-head"></th:block>
+    <link rel="stylesheet" th:href="@{/department.css}">
+    <title th:text="${departments.name}">Departments Detail</title>
+  </head>
+  <body>
+  <nav th:replace="fragments :: navbar('degrees')"></nav>
+  
+  <div class="container">
+    	<h1 th:text="${departments.name}"></h1>
+		<hr/>
+		<h2>Degrees</h2>
+		
+		<ul>
+			<li th:each="currentDepartments : ${departments.degrees}" th:text="${currentDepartments.name}"></li>
+		</ul>
+  
+  
+  
+  </body>
+  </html> 

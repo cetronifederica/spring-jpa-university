@@ -1,9 +1,14 @@
 package jana60.Model;
 
+import java.util.List;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Departments {
@@ -11,7 +16,8 @@ public class Departments {
 	// colonna id
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	@Column(name = "id")
+	private Integer departmentsId;
 
 	// colonna nome
 	private String name;
@@ -26,13 +32,18 @@ public class Departments {
 	// colonna capo dipartimento
 	private String headOfDepartment;
 
+	@OneToMany
+	@JoinColumn(name = "Id")
+	private List<Degrees> degrees;
+
 	// getter e setter
-	public Integer getId() {
-		return id;
+
+	public Integer getDepartmentsId() {
+		return departmentsId;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setDepartmentsId(Integer departmentsId) {
+		this.departmentsId = departmentsId;
 	}
 
 	public String getName() {
@@ -91,6 +102,14 @@ public class Departments {
 
 	public void setHeadOfDepartment(String headOfDepartment) {
 		this.headOfDepartment = headOfDepartment;
+	}
+
+	public List<Degrees> getDegrees() {
+		return degrees;
+	}
+
+	public void setDegrees(List<Degrees> degrees) {
+		this.degrees = degrees;
 	}
 
 }
