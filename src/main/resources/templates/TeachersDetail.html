@@ -11,9 +11,9 @@
     	<h1 th:text="${teachers.name}">Teachers Detail</h1>
 		<hr/>
 		<h2>Teachers and courses</h2>
-		<ul>
+		<!--<ul>
 			<li th:each="currentCourses : ${teachers.courses}" th:text="${currentCourses.name}"></li>
-		</ul>
+		</ul>-->
  <table class="table table-bordered table-light">
   <thead>
     <tr class="table-info">
@@ -36,6 +36,33 @@
     <td th:text="${teachers.getEmail()}"></td>
     <td th:text="${teachers.getOfficeAddress()}"></td>
     <td th:text="${teachers.getOfficeNumber()}"></td>
+    </tr>
+  </tr>
+  </tbody>
+  </table> 
+    </div>
+    <!-- tabella corsi -->
+    <div>
+     <table class="table table-bordered table-light">
+  <thead>
+    <tr class="table-info">
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Period</th>
+      <th scope="col">Year</th>
+      <th scope="col">CFU</th>
+      <th scope="col">Website</th>
+      
+    </tr>
+   </thead>
+  <tbody >
+  <tr  th:each="currentCourses : ${teachers.courses}"scope="row">
+    <td th:text="${currentCourses.name}"></td>
+    <td  th:text="${currentCourses.description}"></td> 
+    <td th:text="${currentCourses.period}"></td>
+    <td th:text="${currentCourses.year}"></td>
+    <td th:text="${currentCourses.cfu}"></td>
+    <td th:text="${currentCourses.website}"></td>
     </tr>
   </tr>
   </tbody>
