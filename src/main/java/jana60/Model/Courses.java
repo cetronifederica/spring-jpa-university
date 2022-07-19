@@ -1,9 +1,14 @@
 package jana60.Model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Courses {
@@ -18,6 +23,11 @@ public class Courses {
 	private int year;
 	private int cfu;
 	private String website;
+
+	@ManyToMany
+	@JoinTable(name = "course_teacher", joinColumns = { @JoinColumn(name = "course_id") }, inverseJoinColumns = {
+			@JoinColumn(name = "teacher_id") })
+	private List<Teachers> teachers;
 
 	// getter e setter
 	public Integer getId() {
@@ -74,6 +84,14 @@ public class Courses {
 
 	public void setWebsite(String website) {
 		this.website = website;
+	}
+
+	public List<Teachers> getTeachers() {
+		return teachers;
+	}
+
+	public void setTeachers(List<Teachers> teachers) {
+		this.teachers = teachers;
 	}
 
 }

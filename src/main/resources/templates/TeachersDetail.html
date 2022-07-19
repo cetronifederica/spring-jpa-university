@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <th:block th:replace="fragments :: risorse-head"></th:block>
+    <title>Country Detail</title> 
+  </head>
+  <body>
+  <nav th:replace="fragments :: navbar('teachers')"></nav>
+  
+    <div class="container">
+    	<h1 th:text="${teachers.name}">Teachers Detail</h1>
+		<hr/>
+		<h2>Teachers and courses</h2>
+		<ul>
+			<li th:each="currentCourses : ${teachers.courses}" th:text="${currentCourses.name}"></li>
+		</ul>
+ <table class="table table-bordered table-light">
+  <thead>
+    <tr class="table-info">
+      <th scope="col">Name</th>
+      <th scope="col">Surname</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Email</th>
+      <th scope="col">Office Address</th>
+      <th scope="col">Office Number</th>
+      
+    </tr>
+   </thead>
+  <tbody >
+  <tr  scope="row">
+      <td th:text="${teachers.getName()}">
+      </td>
+     
+    <td  th:text="${teachers.getSurname()}"></td> 
+    <td th:text="${teachers.getPhone()}"></td>
+    <td th:text="${teachers.getEmail()}"></td>
+    <td th:text="${teachers.getOfficeAddress()}"></td>
+    <td th:text="${teachers.getOfficeNumber()}"></td>
+    </tr>
+  </tr>
+  </tbody>
+  </table> 
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html> 
