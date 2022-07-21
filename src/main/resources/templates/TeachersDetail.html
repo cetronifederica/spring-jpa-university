@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <th:block th:replace="fragments :: risorse-head"></th:block>
-    <title>Country Detail</title> 
+    <title>Teachers Detail</title> 
   </head>
   <body>
   <nav th:replace="fragments :: navbar('teachers')"></nav>
@@ -11,9 +11,6 @@
     	<h1 th:text="${teachers.name}">Teachers Detail</h1>
 		<hr/>
 		<h2>Teachers and courses</h2>
-		<!--<ul>
-			<li th:each="currentCourses : ${teachers.courses}" th:text="${currentCourses.name}"></li>
-		</ul>-->
  <table class="table table-bordered table-light">
   <thead>
     <tr class="table-info">
@@ -27,11 +24,11 @@
     </tr>
    </thead>
   <tbody >
-  <tr  scope="row">
+  <tr scope="row">
       <td th:text="${teachers.getName()}">
       </td>
      
-    <td  th:text="${teachers.getSurname()}"></td> 
+    <td th:text="${teachers.getSurname()}"></td> 
     <td th:text="${teachers.getPhone()}"></td>
     <td th:text="${teachers.getEmail()}"></td>
     <td th:text="${teachers.getOfficeAddress()}"></td>
@@ -56,13 +53,13 @@
     </tr>
    </thead>
   <tbody >
-  <tr  th:each="currentCourses : ${teachers.courses}"scope="row">
-    <td th:text="${currentCourses.name}"></td>
-    <td  th:text="${currentCourses.description}"></td> 
-    <td th:text="${currentCourses.period}"></td>
-    <td th:text="${currentCourses.year}"></td>
-    <td th:text="${currentCourses.cfu}"></td>
-    <td th:text="${currentCourses.website}"></td>
+  <tr  th:each="courses : ${teachers.courses}"scope="row">
+    <td th:text="${courses.name}"></td>
+    <td  th:text="${courses.description}"></td> 
+    <td th:text="${courses.period}"></td>
+    <td th:text="${courses.year}"></td>
+    <td th:text="${courses.cfu}"></td>
+    <td th:text="${courses.website}"></td>
     </tr>
   </tr>
   </tbody>

@@ -6,16 +6,41 @@
     <title th:text="${departments.name}">Departments Detail</title>
   </head>
   <body>
-  <nav th:replace="fragments :: navbar('degrees')"></nav>
+  <nav th:replace="fragments :: navbar('departments')"></nav>
   
   <div class="container">
     	<h1 th:text="${departments.name}"></h1>
 		<hr/>
 		<h2>Degrees</h2>
+		<div>
+     <table class="table table-bordered table-light">
+   <thead>
+    <tr class="table-info">
+      <th scope="col">Name</th>
+      <th scope="col">Level</th>
+      <th scope="col">Address</th>
+      <th scope="col">Email</th>
+      <th scope="col">Website</th>
+      
+    </tr>
+   </thead>
+  <tbody >
+  <tr  th:each="degrees : ${departments.degrees}" scope="row">
+    <td th:text="${degrees.name}"></td>
+    <td  th:text="${degrees.level}"></td> 
+    <td th:text="${degrees.address}"></td>
+    <td th:text="${degrees.email}"></td>
+    <td th:text="${degrees.website}"></td>
+    </tr>
+  </tr>
+  </tbody>
+  </table>  
+    </div> 
+    
 		
-		<ul>
+		<!-- <ul>
 			<li th:each="currentDegrees : ${departments.degrees}" th:text="${currentDegrees.name}"></li>
-		</ul>
+		</ul> -->
   
   
   

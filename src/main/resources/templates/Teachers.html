@@ -2,41 +2,32 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <th:block th:replace="fragments :: risorse-head"></th:block>
-    <link rel="stylesheet" th:href="@{/department.css}">
+    <link rel="stylesheet" th:href="@{/teachers.css}">
     <title>Teachers</title>
   </head>
   <body>
   <nav th:replace="fragments :: navbar('teachers')"></nav>
-  <div>
+  <div class="text-center mb-3">
     <h1>Departments of the University</h1>
   </div>
   <!-- da mostrare se la lista è vuota -->
   <div th:if="${#lists.isEmpty(teachersList)}"> <!-- oppure th:if="${departmentList.size() >0 }" -->
   <h1> Non ci sono Insegnanti</h1>
   </div>
-  <div th:unless="${#lists.isEmpty(teachersList)}" class="container-fluid">
-  <table class="table table-bordered table-light">
+  <div th:unless="${#lists.isEmpty(teachersList)}" class="container-fluid ">
+  <table class="table table-bordered table-light w-50">
   <thead>
     <tr class="table-info">
       <th scope="col">Name</th>
       <th scope="col">Surname</th>
-      <th scope="col">Phone</th>
-      <th scope="col">Email</th>
       <th scope="col">Office Address</th>
-      <th scope="col">Office Number</th>
     </tr>
   </thead>
   <tbody>
   <tr th:each="teachers : ${teachersList}" scope="row">
-      <td>
-      <a th:href="@{|/teachers/${teachers.teachersId}|}" th:text="${teachers.name}"></a>
-      </td>
-
+      <td><a th:href="@{|/teachers/${teachers.teachersId}|}" th:text="${teachers.name}"></a></td>
     <td  th:text="${teachers.getSurname()}"></td> 
-    <td th:text="${teachers.getPhone()}"></td>
-    <td th:text="${teachers.getEmail()}"></td>
     <td th:text="${teachers.getOfficeAddress()}"></td>
-    <td th:text="${teachers.getOfficeNumber()}"></td>
     </tr>
   </tr>
   </tbody>

@@ -29,7 +29,7 @@
   <tbody>
   <tr th:each="departments : ${departmentList}" scope="row">
       <td>
-      <a th:href="@{|/departments/${departments.departmentsId}|}" th:text="${departments.name}"></a>
+      <a th:href="@{|/departments${departments.departmentsId}|}" th:text="${departments.name}"></a>
       </td>
 
     <td  th:text="${departments.getAddress()}"></td> 
@@ -43,9 +43,7 @@
   </table>
   </div>
   
-  <!-- <ul>
-		<li th:each="departmentList : ${departmentList}" th:text="${departmentList}"></li>
-  </ul> -->
+  
   </div>
   
 
